@@ -19,12 +19,9 @@ class GetWelcomeTest {
 
     @DisplayName("Should welcome upon root request with 200 response code")
     @Test
-    public void exampleSmokeTest() {
-        Response response = makeRequest(
-            "<html><body>Welcome to labs-louisehuyton-spring2 application</body></html>",
-            Collections.emptyMap()
-        );
+    void welcomeRootEndpoint() throws Exception {
+        MvcResult response = mockMvc.perform(get("/")).andExpect(status().isOk()).andReturn();
 
-        assertThat(textContentOf(response.getBody().asByteArray())).contains("Welcome to labs-louisehuyton-spring2 application");
+        assertThat(response.getResponse().getContentAsString()).startsWith("Welcome");
     }
 }
