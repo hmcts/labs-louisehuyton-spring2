@@ -24,7 +24,7 @@ class SampleSmokeTest {
     }
 
     @Test
-    void shouldReturnBadRequestForEmptyQuery() {
+    void sampleSmokeTest() {
         Response response = given()
             .contentType(ContentType.JSON)
             .when()
