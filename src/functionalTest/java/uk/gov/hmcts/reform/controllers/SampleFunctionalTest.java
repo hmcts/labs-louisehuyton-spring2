@@ -21,6 +21,7 @@ class SampleFunctionalTest {
     @BeforeEach
     public void setUp() {
         RestAssured.baseURI = testUrl;
+        RestAssured.useRelaxedHTTPSValidation();
     }
 
     @Test
